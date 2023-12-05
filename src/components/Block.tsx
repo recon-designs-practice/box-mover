@@ -15,7 +15,6 @@ const StyledBlock = styled("div")<BlockProps>`
 `;
 
 export default function Block({ isSelected }: BlockProps) {
-  console.log(isSelected);
 
   return <StyledBlock isSelected={isSelected} />;
 }

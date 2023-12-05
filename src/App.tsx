@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import useAppStore from './stores/store'
 import GridContainer from "./components/GridContainer";
-import Block from "./components/Block";
 
 const AppContainer = styled("div")`
   position: relative;
@@ -24,11 +24,9 @@ const Section = styled("section")`
   grid-template-rows: 0px;
 `;
 
-const BlockWrapper = styled("div")`
-  grid-column: span 4;
-`;
-
 function App() {
+  const selectedBlock = useAppStore((state) => state.selectedBlock)
+
   return (
     <AppContainer>
       <main>
@@ -43,35 +41,7 @@ function App() {
           <h1 style={{ margin: "0px" }}>BoxMover</h1>
         </header>
         <Section>
-          <GridContainer>
-            <BlockWrapper>
-              <Block isSelected={true} />
-            </BlockWrapper>
-            <BlockWrapper>
-              <Block isSelected={false} />
-            </BlockWrapper>
-            <BlockWrapper>
-              <Block isSelected={false} />
-            </BlockWrapper>
-            <BlockWrapper>
-              <Block isSelected={false} />
-            </BlockWrapper>
-            <BlockWrapper>
-              <Block isSelected={false} />
-            </BlockWrapper>
-            <BlockWrapper>
-              <Block isSelected={false} />
-            </BlockWrapper>
-            <BlockWrapper>
-              <Block isSelected={false} />
-            </BlockWrapper>
-            <BlockWrapper>
-              <Block isSelected={false} />
-            </BlockWrapper>
-            <BlockWrapper>
-              <Block isSelected={false} />
-            </BlockWrapper>
-          </GridContainer>
+          <GridContainer selectedBlock={selectedBlock} />
         </Section>
       </main>
     </AppContainer>

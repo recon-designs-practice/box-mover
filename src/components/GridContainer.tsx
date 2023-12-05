@@ -1,10 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import Block from "./Block";
 
 type GridContainerProps = {
-  children: React.ReactElement | React.ReactElement[];
+  // children: React.ReactElement | React.ReactElement[];
+  selectedBlock: {
+    x: Number
+    y: Number
+  }
   className?: string;
 };
+
+const BlockWrapper = styled("div")`
+  grid-column: span 4;
+`;
 
 const Container = styled("div")`
   box-sizing: border-box,
@@ -32,13 +41,40 @@ const Container = styled("div")`
 `;
 
 export default function GridContainer({
-  children,
   className,
+  selectedBlock,
   ...otherProps
 }: GridContainerProps) {
+  const { x, y } = selectedBlock
   return (
     <Container className={className} {...otherProps}>
-      {children}
+      <BlockWrapper>
+        <Block isSelected={x === 0 && y === 2} />
+      </BlockWrapper>
+      <BlockWrapper>
+        <Block isSelected={x === 1 && y === 2} />
+      </BlockWrapper>
+      <BlockWrapper>
+        <Block isSelected={x === 2 && y === 2} />
+      </BlockWrapper>
+      <BlockWrapper>
+        <Block isSelected={x === 0 && y === 1} />
+      </BlockWrapper>
+      <BlockWrapper>
+        <Block isSelected={x === 1 && y === 1} />
+      </BlockWrapper>
+      <BlockWrapper>
+        <Block isSelected={x === 2 && y === 1} />
+      </BlockWrapper>
+      <BlockWrapper>
+        <Block isSelected={x === 0 && y === 0} />
+      </BlockWrapper>
+      <BlockWrapper>
+        <Block isSelected={x === 1 && y === 0} />
+      </BlockWrapper>
+      <BlockWrapper>
+        <Block isSelected={x === 2 && y === 0} />
+      </BlockWrapper>
     </Container>
   );
 }
