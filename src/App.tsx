@@ -25,22 +25,30 @@ const Section = styled("section")`
   gap: 32px;
 `;
 
+const Header = styled("header")`
+  position: relative;
+  box-sizing: border-box;
+  padding: 40px 0px 80px 0px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+`;
+
 function App() {
   const theBlock = useBlockStore((state) => state.selectedBlock);
 
   return (
     <AppContainer>
       <main>
-        <header
-          style={{
-            height: "80px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+        <Header>
           <h1 style={{ margin: "0px" }}>BoxMover</h1>
-        </header>
+          <p style={{ margin: "0px 0px 0px 0px" }}>
+            Move the the box highlight using the buttons.
+          </p>
+        </Header>
         <Section>
           <GridContainer selectedBlock={theBlock} />
           <GridControls />
