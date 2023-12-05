@@ -3,11 +3,10 @@ import styled from "styled-components";
 import Block from "./Block";
 
 type GridContainerProps = {
-  // children: React.ReactElement | React.ReactElement[];
   selectedBlock: {
-    x: Number
-    y: Number
-  }
+    x: Number;
+    y: Number;
+  };
   className?: string;
 };
 
@@ -45,7 +44,7 @@ export default function GridContainer({
   selectedBlock,
   ...otherProps
 }: GridContainerProps) {
-  const { x, y } = selectedBlock
+  const { x, y } = selectedBlock;
   return (
     <Container className={className} {...otherProps}>
       <BlockWrapper>

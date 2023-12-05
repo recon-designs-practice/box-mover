@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import useAppStore from './stores/store'
+import useAppStore from "./stores/store";
 import GridContainer from "./components/GridContainer";
+import GridControls from "./components/GridControls";
 
 const AppContainer = styled("div")`
   position: relative;
@@ -18,14 +19,14 @@ const AppContainer = styled("div")`
 const Section = styled("section")`
   position: relative;
   box-sizing: border-box;
-  height: calc(100vh - 80px);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 0px;
+  grid-template-rows: auto;
+  gap: 32px;
 `;
 
 function App() {
-  const selectedBlock = useAppStore((state) => state.selectedBlock)
+  const selectedBlock = useAppStore((state) => state.selectedBlock);
 
   return (
     <AppContainer>
@@ -42,6 +43,7 @@ function App() {
         </header>
         <Section>
           <GridContainer selectedBlock={selectedBlock} />
+          <GridControls />
         </Section>
       </main>
     </AppContainer>
