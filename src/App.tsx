@@ -26,7 +26,7 @@ const Section = styled("section")`
 `;
 
 function App() {
-  const theBlock = useBlockStore((state) => state.selectedBlock)
+  const theBlock = useBlockStore((state) => state.selectedBlock);
 
   return (
     <AppContainer>

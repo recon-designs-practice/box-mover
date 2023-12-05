@@ -44,29 +44,29 @@ export default function GridControls() {
   const handleDownClick = () => {
     const newBlock = {
       x: selectedBlock.x,
-      y: selectedBlock.y === 0 ? 2 : selectedBlock.y - 1
-    }
+      y: selectedBlock.y === 0 ? 2 : selectedBlock.y - 1,
+    };
 
-    updateBlock(newBlock)
-  }
+    updateBlock(newBlock);
+  };
 
   const handleLeftClick = () => {
     const newBlock = {
       x: selectedBlock.x === 0 ? 2 : selectedBlock.x - 1,
-      y: selectedBlock.y
-    }
+      y: selectedBlock.y,
+    };
 
-    updateBlock(newBlock)
-  }
+    updateBlock(newBlock);
+  };
 
   const handleRightClick = () => {
     const newBlock = {
       x: selectedBlock.x >= 2 ? 0 : selectedBlock.x + 1,
-      y: selectedBlock.y
-    }
+      y: selectedBlock.y,
+    };
 
-    updateBlock(newBlock)
-  }
+    updateBlock(newBlock);
+  };
 
   return (
     <Container>
