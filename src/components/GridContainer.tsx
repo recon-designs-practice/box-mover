@@ -45,6 +45,7 @@ export default function GridContainer({
   ...otherProps
 }: GridContainerProps) {
   const { x, y } = selectedBlock;
+  // console.log('From GridContainer:', x, y)
   return (
     <Container className={className} {...otherProps}>
       <BlockWrapper>

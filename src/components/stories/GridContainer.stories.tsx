@@ -5,7 +5,7 @@ import GridContainer from "../GridContainer";
 export const Default: StoryObj<typeof GridContainer> = {
   render: (args) => <GridContainer {...args} />,
   args: {
-    
+    selectedBlock: { x: 0, y: 0 }
   },
 };
 

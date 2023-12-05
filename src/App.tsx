@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import useAppStore from "./stores/store";
+import useBlockStore from "./store";
 import GridContainer from "./components/GridContainer";
 import GridControls from "./components/GridControls";
 
@@ -26,7 +26,7 @@ const Section = styled("section")`
 `;
 
 function App() {
-  const selectedBlock = useAppStore((state) => state.selectedBlock);
+  const theBlock = useBlockStore((state) => state.selectedBlock)
 
   return (
     <AppContainer>
@@ -42,7 +42,7 @@ function App() {
           <h1 style={{ margin: "0px" }}>BoxMover</h1>
         </header>
         <Section>
-          <GridContainer selectedBlock={selectedBlock} />
+          <GridContainer selectedBlock={theBlock} />
           <GridControls />
         </Section>
       </main>
