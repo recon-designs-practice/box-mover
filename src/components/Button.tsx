@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 type Props = {
-  label: String;
+  label?: String;
   onclick?: () => void;
-};
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-const StyledButton = styled("button")`
-  padding: 8px 16px;
+const StyledButton = styled("button")<Props>`
+  padding: 8px 8px;
   font-size: 20px;
   line-height: 24px;
   font-weight: bold;
@@ -25,8 +25,8 @@ const StyledButton = styled("button")`
   }
 `;
 
-export default function Button({ label, onclick }: Props) {
+export default function Button({ label, onclick, ...otherProps }: Props) {
   return (
-    <StyledButton onClick={onclick}>{label ? label : "Click me"}</StyledButton>
+    <StyledButton onClick={onclick} {...otherProps}>{label ? label : "Click me"}</StyledButton>
   );
 }

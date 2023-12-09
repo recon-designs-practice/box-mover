@@ -20,7 +20,7 @@ const Container = styled("div")`
   grid-column: 2 / 12;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 8px;
+  gap: 24px;
 
   @media (min-width: 576px) {
     grid-column: 3 / 11;

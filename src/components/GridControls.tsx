@@ -7,9 +7,7 @@ const Container = styled("div")`
   box-sizing: border-box,
   postion: relative;
   grid-column: 2 / 12;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  // gap: 12px;
 
   @media (min-width: 576px) {
     grid-column: 3 / 11;
@@ -26,6 +24,15 @@ const Container = styled("div")`
   @media (min-width: 1200px) {
     grid-column: 5 / 9;
   }
+`;
+
+const Wrapper = styled("div")`
+  box-sizing: border-box,
+  postion: relative;
+  grid-column: 2 / 12;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 8px;
 `;
 
 export default function GridControls() {
@@ -70,10 +77,28 @@ export default function GridControls() {
 
   return (
     <Container>
-      <Button label="Up" onclick={handleUpClick} />
-      <Button label="Down" onclick={handleDownClick} />
-      <Button label="Left" onclick={handleLeftClick} />
-      <Button label="Right" onclick={handleRightClick} />
+      <Wrapper>
+        <Button
+          style={{ gridColumn: "6 / 8" }}
+          label="Up"
+          onclick={handleUpClick}
+        />
+        <Button
+          style={{ gridColumn: "4 / 6" }}
+          label="Down"
+          onclick={handleDownClick}
+        />
+        <Button
+          style={{ gridColumn: "8 / 10" }}
+          label="Left"
+          onclick={handleLeftClick}
+        />
+        <Button
+          style={{ gridColumn: "6 / 8" }}
+          label="Right"
+          onclick={handleRightClick}
+        />
+      </Wrapper>
     </Container>
   );
 }
